@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punjab Flood Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Punjab Flood Prediction System</h1>
+
+        <div class="navigation">
+    <button type="button" onclick="showPrediction()">
+        New Prediction
+    </button>
+
+    <button type="button" onclick="showHistory()">
+        View Prediction History
+    </button>
+</div>
+
+        <p>Enter environmental details to check flood risk.</p>
+
+
+<div class="location-section">
+
+    <h2>Location Information</h2>
+
+    <label>State</label>
+    <input type="text" value="Punjab" readonly>
+
+    <label>Select District</label>
+    <select id="district" required>
+        <option value="">Select District</option>
+        <option>Amritsar</option>
+        <option>Barnala</option>
+        <option>Bathinda</option>
+        <option>Faridkot</option>
+        <option>Fatehgarh Sahib</option>
+        <option>Fazilka</option>
+        <option>Ferozepur</option>
+        <option>Gurdaspur</option>
+        <option>Hoshiarpur</option>
+        <option>Jalandhar</option>
+        <option>Kapurthala</option>
+        <option>Ludhiana</option>
+        <option>Malerkotla</option>
+        <option>Mansa</option>
+        <option>Moga</option>
+        <option>Muktsar</option>
+        <option>Pathankot</option>
+        <option>Patiala</option>
+        <option>Rupnagar</option>
+        <option>Sangrur</option>
+        <option>Shaheed Bhagat Singh Nagar</option>
+        <option>Tarn Taran</option>
+        <option>Sahibzada Ajit Singh Nagar</option>
+    </select>
+
+</div>
+
+
+        <form id="floodForm">
+
+            <label>Rainfall (Last 24 Hours) mm</label>
+            <input type="number" step="any" id="rainfall_24h_mm" required>
+
+            <label>Rainfall (Last 7 Days) mm</label>
+            <input type="number" step="any" id="rainfall_7day_mm" required>
+
+            <label>River Water Level (m)</label>
+            <input type="number" step="any" id="river_water_level_m" required>
+
+            <label>River Level Change (24 Hours) m</label>
+            <input type="number" step="any" id="river_level_change_24h_m" required>
+
+            <label>River Discharge (cumecs)</label>
+            <input type="number" step="any" id="river_discharge_cumecs" required>
+
+            <label>Soil Moisture (%)</label>
+            <input type="number" step="any" id="soil_moisture_percent" required>
+
+            <label>Elevation (m)</label>
+            <input type="number" step="any" id="elevation_m" required>
+
+            <label>Distance to River (km)</label>
+            <input type="number" step="any" id="distance_to_river_km" required>
+
+            <label>Drainage Capacity Index</label>
+            <input type="number" step="any" id="drainage_capacity_index" required>
+
+            <label>Embankment Condition</label>
+            <select id="embankment_condition" required>
+                <option value="">Select condition</option>
+                <option value="Good">Good</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Poor">Poor</option>
+            </select>
+
+            <button type="submit">Check Flood Risk</button>
+
+            <button type="reset" id="resetBtn">Reset</button>
+
+        </form>
+
+        <div id="result"></div>
+
+        <div id="historySection" style="display: none;">
+
+    <h2>Prediction History</h2>
+
+    <div id="historySummary"></div>
+
+    <div id="historyTable"></div>
+
+</div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
